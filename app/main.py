@@ -28,6 +28,7 @@ def fibonacci(k: int):
         res = redis.get(str(k))
         if res:
             logger.info(' GET DATA FROM REDIS')
+            res = int(res)
         else:
             logger.info(' CALCULATING NEW VALUE')
             res = fib(k)
